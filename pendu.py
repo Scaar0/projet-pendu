@@ -12,7 +12,44 @@ class JeuPenduUnJoueur:
     
     
     def affichage(self):
-        pass
+        match self.vie_restante:
+            case 3:
+                print("________\n" \
+                      " |  |\n" \
+                      " |  ◯\n" \
+                      " |  \n" \
+                      " |\n"
+                      "_|_\n")
+            case 2:
+                print("________\n" \
+                      " |  |\n" \
+                      " |  ◯\n" \
+                      " | /|\\n" \
+                      " |\n"
+                      "_|_\n")
+            case 1:
+                print("________\n" \
+                      " |  |\n" \
+                      " |  ◯\n" \
+                      " | /|\\n" \
+                      " |  |\n"
+                      "_|_\n")
+            case 0:
+                print("________\n" \
+                      " |  |\n" \
+                      " |  ◯\n" \
+                      " | /|\\n" \
+                      " |  |\n"
+                      "_|_/ \n")
+            case -1:
+                print(" _______\n" \
+                      "/       \n")
+                print("________\n" \
+                      " |  |\n" \
+                      " |  ◯\n" \
+                      " | /|\\n" \
+                      " |  |\n"
+                      "_|_/ \ \n")
 
     def choix_diff(self):
         while True:
@@ -47,7 +84,7 @@ class JeuPenduUnJoueur:
     def jouer(self):
         pass
 
-    
+
         
 
     
