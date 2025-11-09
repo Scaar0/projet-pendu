@@ -1,6 +1,17 @@
 import random
-import tkinter as tk
+import time
 
+ROUGE = "\033[31m"
+VERT = "\033[32m"
+JAUNE = "\033[33m"
+BLEU = "\033[34m"
+RESET = "\033[0m"  # Réinitialiser la couleur
+
+def print_slow(texte, delay=0.03):
+    for c in texte:
+        print(f"{c}", end="", flush=True)
+        time.sleep(delay)
+    print()
 
 class JeuPenduUnJoueur:
     def __init__(self, vie_restante = 3):
@@ -15,37 +26,31 @@ class JeuPenduUnJoueur:
     
 
     def afficher_pendu(self):
-        
+        print_slow(ROUGE + "\nMauvaise lettre !! " + RESET+ f"({self.vie_restante} vies restantes)")
         match self.vie_restante:
             case 3:
-                print(f"Mauvaise lettre ({self.vie_restante} vies restantes)")
-                print("________\n" \
+                print_slow("________\n" \
                       " |   |\n" \
                       " |   \n" \
                       " |   \n" \
                       " | \n"
                       "_|_ \n")
             case 2:
-                print(f"Mauvaise lettre ({self.vie_restante} vies restantes)")
-                print("________\n" \
+                print_slow("________\n" \
                       " |   |\n" \
                       " |   ◯\n" \
                       " |   \n" \
                       " | \n"
-                      "_|_ \n")
-                
+                      "_|_ \n")   
             case 1:
-                print(f"Mauvaise lettre ({self.vie_restante} vies restantes)")
-                print("________\n" \
+                print_slow("________\n" \
                       " |   |\n" \
                       " |   ◯\n" \
                       " |  /|\\ \n" \
                       " | \n"
-                      "_|_ \n")
-                
+                      "_|_ \n")         
             case 0:
-                print(f"Mauvaise lettre ({self.vie_restante} vies restantes)")
-                print("________\n" \
+                print_slow("________\n" \
                       " |   |\n" \
                       " |   ◯\n" \
                       " |  /|\\ \n" \
@@ -55,12 +60,20 @@ class JeuPenduUnJoueur:
 
     def choix_diff(self) -> int :
         while True:
-            diff = int(input("Quelle difficultée (Entrez le chiffre correspondant)? \n1 : Facile, mot de 5 lettres\n2 : Moyen, mot de 6 lettres\n3 : Dur, mot de 7 lettres\n"))
-            print(diff)
-            if not (diff == 1 or diff == 2 or diff == 3):
-                print("Entrer un chiffre valide (1, 2 ou 3)")
-            else:
-                break
+            try:
+                print_slow("Quelle difficultée (Entrez le " + VERT + "chiffre " + RESET + "correspondant) ?  \n1 : " + VERT + "Facile " + RESET + ": mot de 5 lettres\n2 : " + JAUNE + "Moyen " + RESET + ": mot de 6 lettres\n3 :"+ ROUGE +" Dur "+ RESET +": mot de 7 lettres", 0.02)
+                diff = int(input())
+                if not (diff == 1 or diff == 2 or diff == 3):
+                    print_slow(ROUGE + "############################### \n" \
+                "Entrez seulement 1, 2 ou 3 \n" \
+                "############################### " + RESET)
+                else:
+                    break
+            except ValueError:
+                print_slow(ROUGE + "############################### \n" \
+                "ERREUR : Pas de lettre acceptée. \n" \
+                "Entrez seulement 1, 2 ou 3 \n" \
+                "############################### " + RESET)
         return diff
         
     
@@ -75,8 +88,6 @@ class JeuPenduUnJoueur:
             case 3:
                 with open("liste7.txt") as liste7:
                     tab_mot = liste7.readlines()
-            case _:
-                raise DiffError("Erreur fatal de difficulté")
         return tab_mot[random.randint(0, len(tab_mot) - 1)].strip().lower()
 
     def demander_lettre(self):
@@ -84,9 +95,13 @@ class JeuPenduUnJoueur:
                 lettre = input("Propose une lettre : ")
                 lettre = lettre.lower()
                 if not lettre.isalpha() or len(lettre) != 1:
-                    print("Entre une seule lettre.")
+                    print_slow(ROUGE + "############################### \n" \
+                        "Entrez seulement une lettre\n" \
+                        "############################### " + RESET)
                 elif lettre in self.lettres_trouvees or lettre in self.lettres_ratees:
-                    print("Lettre déjà proposée.")
+                    print_slow(ROUGE + "############################### \n" \
+                        "Lettre déjà proposée\n" \
+                        "############################### " + RESET)
                 else:
                     break
 
@@ -94,11 +109,12 @@ class JeuPenduUnJoueur:
             for i, l in enumerate(self.mot):
                 if l == lettre:
                     self.lettres_trouvees[i] = lettre
-            print(f"Bonne lettre ! ({self.afficher_mot()})")
+            print_slow(VERT + "\nBonne lettre ! " + RESET)
         else:
             self.lettres_ratees.append(lettre)
             self.vie_restante -= 1
-            self.afficher_pendu()
+            if self.vie_restante >= 0:
+                self.afficher_pendu()
     
     def est_gagne(self):
         return "_" not in self.lettres_trouvees
@@ -108,39 +124,38 @@ class JeuPenduUnJoueur:
             
 
 if __name__ == "__main__":
-
-    jeu = JeuPenduUnJoueur()
     print("=== Jeu du Pendu ===")
+    jeu = JeuPenduUnJoueur()
     while not (jeu.est_gagne() or jeu.est_perdu()):
-        print("\nMot :", jeu.afficher_mot())
-        print("Lettres ratées :", ", ".join(jeu.lettres_ratees))
+        print_slow("\nMot :" + jeu.afficher_mot())
+        print_slow("Lettres ratées :" + ", ".join(jeu.lettres_ratees))
         jeu.demander_lettre()
 
     if jeu.est_gagne():
-        print(f"🎉 Bravo ! Le mot était : {jeu.mot}")
+        print_slow(f"Bravo ! Le mot était : {jeu.mot}")
     else:
-        print("  ________            ____           _____     _____      ________\n" \
+        print_slow(ROUGE + "  ________            ____           _____     _____      ________\n" \
               " /  ____  \\          /    \\         |     \\   /     |    |  ______|\n" \
               "/  /    \\__\\        /  /\\  \\        |  |\\  \\_/  /|  |    |  |___\n" \
               "|  |    ____       /  /__\\  \\       |  | \\     / |  |    |      |\n" \
               "|  |   |__  \\     /  ______  \\      |  |  \\___/  |  |    |   ___|\n" \
               "\\  \\_____/  /    /  /      \\  \\     |  |         |  |    |  |_____\n" \
-              " \\_________/    /__/        \\__\\    |__|         |__|    |________|\n")
-        print("  _______    ___          ___     ________      ________\n" \
+              " \\_________/    /__/        \\__\\    |__|         |__|    |________|\n", 0.005)
+        print_slow("  _______    ___          ___     ________      ________\n" \
               " /  ____  \\  \\  \\        /  /    |  ______|    |   __   |\n" \
               "/  /    \\  \\  \\  \\      /  /     |  |___       |  |__|  | \n" \
               "|  |    |  |   \\  \\    /  /      |      |      |      __|\n" \
               "|  |    |  |    \\  \\  /  /       |   ___|      |  |\\  \\ \n" \
               "\\  \\____/  /     \\  \\/  /        |  |_____     |  | \\  \\\n" \
-              " \\________/       \\____/         |________|    |__|  \\__\\\n")
+              " \\________/       \\____/         |________|    |__|  \\__\\\n " + RESET, 0.005)
 
-        print("________\n" \
+        print_slow("________\n" \
               " |   |\n" \
               " |   ◯\n" \
               " |  /|\\ \n" \
               " |   |\n"
               "_|_ / \\ \n")
-        print(f"Le mot était : {jeu.mot}")
+        print_slow("Le mot était : " + JAUNE + f"{jeu.mot}" + RESET)
 
     
     
