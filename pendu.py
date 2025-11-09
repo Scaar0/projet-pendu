@@ -1,9 +1,6 @@
 import random
 import tkinter as tk
 
-class DiffError(Exception):
-    """Exception levée lorsque la difficulté n'est pas 1 ou 2 ou 3"""
-    pass
 
 class JeuPenduUnJoueur:
     def __init__(self, vie_restante = 3):
@@ -54,28 +51,7 @@ class JeuPenduUnJoueur:
                       " |  /|\\ \n" \
                       " |   |\n"
                       "_|_ \n")
-            case -1:
-                print("  ________            ____           _____     _____      ________\n" \
-                      " /  ____  \\          /    \\         |     \\   /     |    |  ______|\n" \
-                      "/  /    \\__\\        /  /\\  \\        |  |\\  \\_/  /|  |    |  |___\n" \
-                      "|  |    ____       /  /__\\  \\       |  | \\     / |  |    |      |\n" \
-                      "|  |   |__  \\     /  ______  \\      |  |  \\___/  |  |    |   ___|\n" \
-                      "\\  \\_____/  /    /  /      \\  \\     |  |         |  |    |  |_____\n" \
-                      " \\_________/    /__/        \\__\\    |__|         |__|    |________|\n")
-                print("  _______    ___          ___     ________      ________\n" \
-                      " /  ____  \\  \\  \\        /  /    |  ______|    |   __   |\n" \
-                      "/  /    \\  \\  \\  \\      /  /     |  |___       |  |__|  | \n" \
-                      "|  |    |  |   \\  \\    /  /      |      |      |      __|\n" \
-                      "|  |    |  |    \\  \\  /  /       |   ___|      |  |\\  \\ \n" \
-                      "\\  \\____/  /     \\  \\/  /        |  |_____     |  | \\  \\\n" \
-                      " \\________/       \\____/         |________|    |__|  \\__\\\n")
-
-                print("________\n" \
-                      " |   |\n" \
-                      " |   ◯\n" \
-                      " |  /|\\ \n" \
-                      " |   |\n"
-                      "_|_ / \\ \n")
+            
 
     def choix_diff(self) -> int :
         while True:
@@ -101,9 +77,9 @@ class JeuPenduUnJoueur:
                     tab_mot = liste7.readlines()
             case _:
                 raise DiffError("Erreur fatal de difficulté")
-        return tab_mot[random.randint(0, len(tab_mot) - 1)].lower()
+        return tab_mot[random.randint(0, len(tab_mot) - 1)].strip().lower()
 
-    def proposer_lettre(self):
+    def demander_lettre(self):
         while True:
                 lettre = input("Propose une lettre : ")
                 lettre = lettre.lower()
@@ -121,12 +97,50 @@ class JeuPenduUnJoueur:
             print(f"Bonne lettre ! ({self.afficher_mot()})")
         else:
             self.lettres_ratees.append(lettre)
-            self.essais_restants -= 1
+            self.vie_restante -= 1
             self.afficher_pendu()
+    
+    def est_gagne(self):
+        return "_" not in self.lettres_trouvees
+
+    def est_perdu(self):
+        return self.vie_restante < 0
             
 
+if __name__ == "__main__":
 
-a = JeuPenduUnJoueur()
+    jeu = JeuPenduUnJoueur()
+    print("=== Jeu du Pendu ===")
+    while not (jeu.est_gagne() or jeu.est_perdu()):
+        print("\nMot :", jeu.afficher_mot())
+        print("Lettres ratées :", ", ".join(jeu.lettres_ratees))
+        jeu.demander_lettre()
+
+    if jeu.est_gagne():
+        print(f"🎉 Bravo ! Le mot était : {jeu.mot}")
+    else:
+        print("  ________            ____           _____     _____      ________\n" \
+              " /  ____  \\          /    \\         |     \\   /     |    |  ______|\n" \
+              "/  /    \\__\\        /  /\\  \\        |  |\\  \\_/  /|  |    |  |___\n" \
+              "|  |    ____       /  /__\\  \\       |  | \\     / |  |    |      |\n" \
+              "|  |   |__  \\     /  ______  \\      |  |  \\___/  |  |    |   ___|\n" \
+              "\\  \\_____/  /    /  /      \\  \\     |  |         |  |    |  |_____\n" \
+              " \\_________/    /__/        \\__\\    |__|         |__|    |________|\n")
+        print("  _______    ___          ___     ________      ________\n" \
+              " /  ____  \\  \\  \\        /  /    |  ______|    |   __   |\n" \
+              "/  /    \\  \\  \\  \\      /  /     |  |___       |  |__|  | \n" \
+              "|  |    |  |   \\  \\    /  /      |      |      |      __|\n" \
+              "|  |    |  |    \\  \\  /  /       |   ___|      |  |\\  \\ \n" \
+              "\\  \\____/  /     \\  \\/  /        |  |_____     |  | \\  \\\n" \
+              " \\________/       \\____/         |________|    |__|  \\__\\\n")
+
+        print("________\n" \
+              " |   |\n" \
+              " |   ◯\n" \
+              " |  /|\\ \n" \
+              " |   |\n"
+              "_|_ / \\ \n")
+        print(f"Le mot était : {jeu.mot}")
 
     
     
