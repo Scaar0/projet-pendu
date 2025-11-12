@@ -182,7 +182,6 @@ armand
 armees
 arnaud
 arrete
-arrete
 arrets
 arrhes
 arrive
@@ -257,7 +256,6 @@ bagage
 bagdad
 baiser
 baisse
-baisse
 balade
 balaye
 balcon
@@ -269,7 +267,6 @@ ballet
 ballon
 ballot
 baltes
-balzac
 bambin
 bambou
 banale
@@ -277,7 +274,6 @@ banane
 bander
 bandes
 bandit
-banian
 bannir
 banque
 baobab
@@ -293,7 +289,6 @@ barrer
 barres
 barrot
 barsac
-baryum
 basket
 basque
 basses
@@ -332,8 +327,6 @@ besson
 betail
 betise
 beurre
-bhutto
-biffer
 bijoux
 bilans
 bilbao
@@ -343,8 +336,6 @@ billet
 binome
 bipede
 biquet
-birman
-birman
 bishop
 bitume
 bitume
@@ -363,12 +354,10 @@ blinis
 blocus
 blonde
 bloque
-bloque
 blouse
 bobine
 bocage
 boeing
-bogart
 bogota
 boiter
 boites
@@ -388,7 +377,6 @@ bottes
 bottin
 boucan
 bouche
-boucle
 boucle
 bouder
 boudin
@@ -414,8 +402,6 @@ brasov
 braver
 brebis
 breche
-brecht
-bresil
 bresil
 bresse
 breton
@@ -426,7 +412,6 @@ brider
 bridge
 brieuc
 brigue
-brique
 brisee
 briser
 broder
@@ -448,7 +433,6 @@ buffet
 buffle
 bunker
 bureau
-cabale
 cabane
 cabine
 cables
@@ -477,7 +461,6 @@ calvet
 camera
 camion
 campus
-canada
 canada
 canard
 canaux
@@ -556,15 +539,11 @@ charge
 charme
 charte
 chasse
-chasse
-chasse
 chaste
 chaude
 chauds
 chaume
 chauve
-cheikh
-chelem
 chemin
 chenet
 cheque
@@ -583,7 +562,6 @@ chimie
 chiper
 chipie
 chipot
-chirac
 chiron
 chlore
 choisi
@@ -616,7 +594,6 @@ clamer
 claque
 clarte
 classe
-classe
 claude
 clause
 clerge
@@ -641,19 +618,16 @@ collor
 colore
 combat
 comble
-comble
 comite
 commis
 commun
 compas
-compte
 compte
 concis
 conclu
 concue
 concus
 confer
-confie
 confie
 confit
 confus
@@ -693,7 +667,6 @@ couler
 coupee
 couper
 coupes
-coupes
 couple
 coupon
 courbe
@@ -723,7 +696,6 @@ crepir
 crepus
 cretin
 creuse
-creuse
 crever
 criant
 crible
@@ -743,7 +715,6 @@ cruche
 cubain
 cuisse
 cuiter
-cuivre
 cuivre
 culier
 cumule
@@ -772,7 +743,6 @@ debile
 debout
 debris
 debute
-debute
 debuts
 decade
 decaux
@@ -799,7 +769,6 @@ defier
 defile
 defini
 defunt
-degage
 degage
 degats
 degout
@@ -875,7 +844,6 @@ dingue
 dirais
 dirait
 direct
-dirige
 dirige
 diront
 disais
@@ -1007,7 +975,6 @@ empire
 emplir
 emploi
 empote
-en bas
 enclin
 enclos
 encore
@@ -1645,7 +1612,6 @@ klaxon
 konrad
 koweit
 kurdes
-la-bas
 labeur
 labour
 lacher
@@ -1878,7 +1844,6 @@ mexico
 michel
 mickey
 micmac
-micro-
 micros
 mielle
 mienne
@@ -2034,7 +1999,6 @@ nujoma
 numero
 objets
 oblige
-oblige
 obscur
 obtenu
 occupe
@@ -2053,7 +2017,6 @@ oindre
 oiseau
 oiseux
 ombres
-on-dit
 ongles
 opaque
 operas
@@ -2244,7 +2207,6 @@ plaine
 plaint
 plaire
 planer
-plante
 plante
 plaque
 plates
@@ -2597,7 +2559,6 @@ russes
 russie
 rustre
 rythme
-sa vie
 sabine
 sables
 sachem
@@ -2973,7 +2934,6 @@ tunnel
 turque
 tympan
 typhon
-u.s.a.
 ulcere
 ultime
 ultimo
@@ -3060,13 +3020,11 @@ vexant
 viande
 vibrer
 vicier
-victor
 vienne
 vienne
 vierge
 vierge
 vigile
-viktor
 vilain
 villes
 violer
@@ -3123,26 +3081,10 @@ voyait
 voyant
 voyons
 vraies
-vulpin
-wagner
 wagons
-walesa
-wallon
-walter
-wayang
-welles
-welter
-werner
-wigwam
-wilson
-xavier
 yamaha
-yasser
-yvette
 zagreb
 zenith
 zigzag
-zlotys
 zombie
 zurich
-zygote

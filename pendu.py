@@ -14,7 +14,7 @@ def print_slow(texte, delay=0.03):
     print()
 
 class JeuPenduUnJoueur:
-    def __init__(self, vie_restante = 3):
+    def __init__(self, vie_restante = 4):
         self.vie_restante = vie_restante
         self.diff = self.choix_diff()
         self.mot = self.definir_mot()
@@ -124,7 +124,8 @@ class JeuPenduUnJoueur:
             
 
 if __name__ == "__main__":
-    print("=== Jeu du Pendu ===")
+    
+    print(BLEU + "======= Jeu du Pendu ======" + RESET)
     jeu = JeuPenduUnJoueur()
     while not (jeu.est_gagne() or jeu.est_perdu()):
         print_slow("\nMot :" + jeu.afficher_mot())
@@ -132,7 +133,15 @@ if __name__ == "__main__":
         jeu.demander_lettre()
 
     if jeu.est_gagne():
-        print_slow(f"Bravo ! Le mot était : {jeu.mot}")
+        print_slow(VERT + 
+              "___                    ___    __      _____      __\n" \
+              "\\  \\                  /  /   |  |    |     \\    |  |\n" \
+              " \\  \\      ____      /  /    |  |    |  |\\  \\   |  |\n" \
+              "  \\  \\    /    \\    /  /     |  |    |  | \\  \\  |  |\n" \
+              "   \\  \\  /  /\\  \\  /  /      |  |    |  |  \\  \\ |  |\n" \
+              "    \\  \\/  /  \\  \\/  /       |  |    |  |   \\  \\|  |\n" \
+              "     \\____/    \\____/        |__|    |__|    \\_____|\n" + RESET, 0.005)
+        print_slow("Bravo ! Le mot était :"+ JAUNE + f" {jeu.mot}" + RESET)
     else:
         print_slow(ROUGE + "  ________            ____           _____     _____      ________\n" \
               " /  ____  \\          /    \\         |     \\   /     |    |  ______|\n" \
