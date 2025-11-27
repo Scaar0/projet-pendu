@@ -20,6 +20,7 @@ class JeuPenduUnJoueur:
         self.mot = self.definir_mot()
         self.lettres_trouvees = ["_" for _ in self.mot]
         self.lettres_ratees = []
+        self.t0 = time.time()
     
     def afficher_mot(self):
         return " ".join(self.lettres_trouvees)
@@ -131,6 +132,7 @@ if __name__ == "__main__":
         print_slow("Lettres ratées :" + ", ".join(jeu.lettres_ratees))
         jeu.demander_lettre()
 
+    t = int(time.time() - jeu.t0)
     if jeu.est_gagne():
         print_slow(VERT + 
               "___                    ___    __      _____      __\n" \
@@ -140,6 +142,7 @@ if __name__ == "__main__":
               "   \\  \\  /  /\\  \\  /  /      |  |    |  |  \\  \\ |  |\n" \
               "    \\  \\/  /  \\  \\/  /       |  |    |  |   \\  \\|  |\n" \
               "     \\____/    \\____/        |__|    |__|    \\_____|\n" + RESET, 0.005)
+        print_slow(f"Temps : {t}s \n")
         print_slow("Bravo ! Le mot était :"+ JAUNE + f" {jeu.mot}" + RESET)
     else:
         print_slow(ROUGE + "  ________            ____           _____     _____      ________\n" \
@@ -163,6 +166,7 @@ if __name__ == "__main__":
               " |  /|\\ \n" \
               " |   |\n"
               "_|_ / \\ \n")
+        print_slow(f"Temps : {t}s \n")
         print_slow("Le mot était : " + JAUNE + f"{jeu.mot}" + RESET)
 
     
