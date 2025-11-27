@@ -12,28 +12,28 @@ Le programme fonctionne sur **Python 3.8+**.
 
 Le jeu charge les listes suivantes :
 
-**liste5.txt** → mots de 5 lettres
+```liste5.txt``` → mots de 5 lettres
 
-**liste6.txt** → mots de 6 lettres
+```liste6.txt``` → mots de 6 lettres
 
-**liste7.txt** → mots de 7 lettres
+```liste7.txt``` → mots de 7 lettres
 
 Ils doivent être placés au même niveau que le script Python.
 
-## Lancer le jeu
+# Lancer le jeu
 ```bash
     python3.xx pendu.py
 ```
 
-## Règles du jeu
+# Règles du jeu
 
 1. Choisissez une difficulté :
 
-    - **: Facile** → mot de 5 lettres
+    - **1 : Facile** → mot de 5 lettres
 
-    - **: Moyen** → mot de 6 lettres
+    - **2 : Moyen** → mot de 6 lettres
 
-    - **: Difficile** → mot de 7 lettres
+    - **3 : Difficile** → mot de 7 lettres
 
 2. Proposez une lettre à chaque tour.
 
@@ -43,8 +43,8 @@ Ils doivent être placés au même niveau que le script Python.
 
 5. Vous gagnez si toutes les lettres sont trouvées avant d’avoir 0 vie.
 
-## Fonctionnalités avancées
-### Affichage lent (effet machine à écrire)
+# Fonctionnalités avancées
+## Affichage lent (effet machine à écrire)
 
 Le texte est rendu avec un léger délai entre chaque caractère :
 ```bash
@@ -52,15 +52,15 @@ def print_slow(texte, delay=0.03):
     ...
 ```
 
-### ASCII Art du pendu
+## ASCII Art du pendu
 
 Le pendu évolue selon le nombre de vies restantes (3 → 2 → 1 → 0 → Défaite).
 
-### Gestion des couleurs ANSI
+## Gestion des couleurs ANSI
 
 Propre, portable et compatible avec la plupart des terminaux.
 
-## Organisation du code
+# Organisation du code
 
 ```JeuPenduUnJoueur``` : classe principale
 
