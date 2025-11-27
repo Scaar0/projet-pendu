@@ -1,41 +1,39 @@
-### Installation
-1. Cloner ou télécharger le projet
+# Installation
+## 1. Cloner ou télécharger le projet
 ```bash
     git clone <repo>
     cd pendu
 ```
-2. Vérifier votre version de Python
+## 2. Vérifier votre version de Python
 
-Le programme fonctionne sur Python 3.8+.
+Le programme fonctionne sur **Python 3.8+**.
 
-python --version
-
-3. Préparer les fichiers de mots
+## 3. Préparer les fichiers de mots
 
 Le jeu charge les listes suivantes :
 
-liste5.txt → mots de 5 lettres
+**liste5.txt** → mots de 5 lettres
 
-liste6.txt → mots de 6 lettres
+**liste6.txt** → mots de 6 lettres
 
-liste7.txt → mots de 7 lettres
+**liste7.txt** → mots de 7 lettres
 
 Ils doivent être placés au même niveau que le script Python.
 
-Si vous avez un fichier brut avec accents, utilisez un script de nettoyage (non inclus ici) pour convertir en lettres sans accents.
+## Lancer le jeu
+```bash
+    python3.xx pendu.py
+```
 
-🚀 Lancer le jeu
-python pendu.py
-
-🎯 Règles du jeu
+## Règles du jeu
 
 Choisissez une difficulté :
 
-1 : Facile → mot de 5 lettres
+1. **1 : Facile** → mot de 5 lettres
 
-2 : Moyen → mot de 6 lettres
+2. **2 : Moyen** → mot de 6 lettres
 
-3 : Difficile → mot de 7 lettres
+3. **3 : Difficile** → mot de 7 lettres
 
 Proposez une lettre à chaque tour.
 

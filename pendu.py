@@ -124,7 +124,6 @@ class JeuPenduUnJoueur:
             
 
 if __name__ == "__main__":
-    
     print(BLEU + "======= Jeu du Pendu ======" + RESET)
     jeu = JeuPenduUnJoueur()
     while not (jeu.est_gagne() or jeu.est_perdu()):
