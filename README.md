@@ -117,11 +117,14 @@ Le jeu est structuré autour de la classe `JeuPenduUnJoueur` qui encapsule toute
 
 ## 👨‍💻 Auteur
 
-**Scaar0**
+**Oscar LUIGGI, alias : Scaar0**
 - GitHub : [@Scaar0](https://github.com/Scaar0)
 
-**anes931**
+**Anes LITIM, alias : anes931**
 - GitHub : [@anes931](https://github.com/anes931)
+
+**Sidar MESE, alias : Sidar953**
+- GitHub : [@Sidar953](https://github.com/Sidar953)
 
 ## 📝 Licence
 
