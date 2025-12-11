@@ -119,6 +119,7 @@ Le jeu est structuré autour de la classe `JeuPenduUnJoueur` qui encapsule toute
 
 **Scaar0**
 - GitHub : [@Scaar0](https://github.com/Scaar0)
+
 **anes931**
 - GitHub : [@anes931](https://github.com/anes931)
 
