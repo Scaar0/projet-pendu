@@ -2340,14 +2340,10 @@ nippone
 nippons
 niveaux
 niveler
-nixdorf
 nomades
 nombril
 nominal
 nomines
-nomment
-nonante
-noriega
 normale
 normand
 normaux
@@ -2382,7 +2378,6 @@ obtenir
 obtenue
 obtenus
 obtient
-occiput
 occulte
 occupee
 occuper
@@ -2399,7 +2394,6 @@ offrant
 offrent
 ogresse
 oiseaux
-oleoduc
 olivier
 ombilic
 omettre
@@ -2468,10 +2462,8 @@ papoter
 paprika
 paquets
 paradis
-parapet
 parasol
 pareils
-parente
 parente
 parents
 paresse
@@ -2497,7 +2489,6 @@ partage
 partant
 partent
 partial
-partiel
 parties
 partout
 parvenu
