@@ -1472,7 +1472,6 @@ heurts
 hideux
 hindou
 hisser
-hitler
 hocher
 homard
 hommes
@@ -1483,10 +1482,6 @@ hostie
 hotels
 hourra
 housse
-howard
-hubert
-hughes
-hugues
 huiler
 huitre
 humain
@@ -1495,14 +1490,10 @@ humeur
 humide
 humour
 hurler
-hurrah
-huston
-ictere
 ideale
 ideaux
 idiote
 ignare
-ignore
 ignore
 images
 imiter
@@ -1515,7 +1506,6 @@ impose
 impots
 impuni
 inapte
-incite
 incite
 inclus
 indice
@@ -2006,8 +1996,6 @@ occupe
 octroi
 odeurs
 odorat
-uvrer
-uvres
 offert
 office
 offres

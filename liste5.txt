@@ -1515,7 +1515,6 @@ regis
 regle
 reglo
 regne
-reich
 reims
 reine
 reins
